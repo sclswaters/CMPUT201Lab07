@@ -13,7 +13,7 @@ for i in 1 2 3 4; do
         file2="$dir/$name.2.txt"
         outfile="$outdir/${name}Diff.txt"
 
-        if diff -q "$file1" "$file2" > /dev/null; then
+        if diff -u "$file1" "$file2" > /dev/null; then
             if [ -f "$outfile" ]; then
                 echo "unexpected $outfile" >&2
                 ok=no
